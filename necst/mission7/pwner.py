@@ -14,7 +14,7 @@ p.sendline("1")
 print(p.recvuntil(":"))
 p.sendline(";")
 
-# Set time zone which will allocate on the same space of the time format
+# Set time zone which will allocate on the same space of the time format (USE AFTER FREE YAY)
 print(p.recvuntil("Exit"))
 p.sendline("3")
 print(p.recvuntil(":"))

