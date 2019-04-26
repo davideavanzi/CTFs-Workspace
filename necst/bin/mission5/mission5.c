@@ -11,15 +11,11 @@ void main(void){
   char *ptr;
   char input_buffer [11];
   char *flag_not_found;
-  
-  // clear input buffer and some bytes after ???
-
   ptr = input_buffer;
   
   for(i = 0xe; i != 0; i--, ptr += 4)
       *ptr = 0;
-  
-  // read the flag file
+
 
   flag_fp = fopen("./flag","rb");
   if (flag_fp == (FILE *)0x0) {
@@ -28,12 +24,8 @@ void main(void){
   }
   fread(flag,0x400,1,flag_fp);
 
-  // input the guess
-
   puts("Guess the flag!");
   gets(input_buffer);
-  
-  // Compare the guess with the actual flag
   
   compare_result = strncmp(input_buffer,flag,0x400);
   if (compare_result == 0) {
@@ -45,7 +37,5 @@ void main(void){
           );
   }
 
-  // Exit(0) quindi niente overwrite del EIP perche' non finisce con ret.
-  
   exit(0);
 }
