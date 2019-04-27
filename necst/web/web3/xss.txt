@@ -1,0 +1,4 @@
+<<SCRIPT>alert("XSS");//<</SCRIPT>
+
+<IMG """><SCRIPT>alert("XSS")</SCRIPT>">
+
