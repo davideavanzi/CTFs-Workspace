@@ -1,5 +1,0 @@
-<<SCRIPT>alert("XSS");//<</SCRIPT>
-
-<IMG """><SCRIPT>alert("XSS")</SCRIPT>">
-
-<svg onload="alert(1)">
